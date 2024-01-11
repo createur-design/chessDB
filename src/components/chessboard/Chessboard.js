@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Chessboard } from "react-chessboard";
 
-function test({ pos }) {
+function ChessboardComponent({ pos }) {
   const [position, setPosition] = useState(pos.fenPosition);
   const resetPosition = () => {
     setPosition(pos.fenPosition);
@@ -34,4 +34,4 @@ function test({ pos }) {
   );
 }
 
-export default test;
+export default ChessboardComponent;
