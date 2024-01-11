@@ -2,7 +2,7 @@ import Chessboard from "@/components/chessboard/Chessboard";
 import { Parser } from "html-to-react";
 
 const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/problemes/${slug}`, {
+  const res = await fetch(`${process.env.NEXT_API_URI}/api/problemes/${slug}`, {
     next: { revalidate: 3600 },
   });
 

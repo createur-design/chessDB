@@ -10,7 +10,7 @@ export const metadata = {
 };
 
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/problemes", {
+  const res = await fetch(`${process.env.NEXT_API_URI}/api/problemes`, {
     next: { revalidate: 3600 },
   });
 
