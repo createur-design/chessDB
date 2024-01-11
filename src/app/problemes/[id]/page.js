@@ -1,13 +1,11 @@
 import Chessboard from "@/components/chessboard/Chessboard";
+import { BASE_API_URL } from "@/utils/constants";
 import { Parser } from "html-to-react";
 
 const getData = async (slug) => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/problemes/${slug}`,
-    {
-      next: { revalidate: 3600 },
-    }
-  );
+  const res = await fetch(`${BASE_API_URL}/api/problemes/${slug}`, {
+    next: { revalidate: 3600 },
+  });
 
   if (!res.ok) {
     throw new Error("Something went wrong");

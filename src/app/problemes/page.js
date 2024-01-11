@@ -1,6 +1,7 @@
 // import problemes from "@/data/problemes";
 
 import ItemProbleme from "@/components/probleme/Item";
+import { BASE_API_URL } from "@/utils/constants";
 import Link from "next/link";
 
 export const metadata = {
@@ -10,12 +11,9 @@ export const metadata = {
 };
 
 const getData = async () => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/problemes`,
-    {
-      next: { revalidate: 3600 },
-    }
-  );
+  const res = await fetch(`${BASE_API_URL}/api/problemes`, {
+    next: { revalidate: 3600 },
+  });
 
   if (!res.ok) {
     throw new Error("Something went wrong");
