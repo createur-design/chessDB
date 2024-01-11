@@ -10,9 +10,12 @@ export const metadata = {
 };
 
 const getData = async () => {
-  const res = await fetch(`${process.env.NEXT_API_URI}/api/problemes`, {
-    next: { revalidate: 3600 },
-  });
+  const res = await fetch(
+    `${process.env.NEXT__PUBLIC_BASE_API_URL}/api/problemes`,
+    {
+      next: { revalidate: 3600 },
+    }
+  );
 
   if (!res.ok) {
     throw new Error("Something went wrong");
