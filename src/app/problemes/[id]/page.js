@@ -3,7 +3,7 @@ import { Parser } from "html-to-react";
 
 const getData = async (slug) => {
   const res = await fetch(
-    `${process.env.NEXT__PUBLIC_BASE_API_URL}/api/problemes/${slug}`,
+    `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/problemes/${slug}`,
     {
       next: { revalidate: 3600 },
     }
