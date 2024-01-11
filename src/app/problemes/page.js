@@ -11,7 +11,7 @@ export const metadata = {
 };
 
 const getData = async () => {
-  const res = await fetch(`chess-master-crime.vercel.app/api/problemes`, {
+  const res = await fetch(`${BASE_API_URL}/api/problemes`, {
     next: { revalidate: 3600 },
   });
 
@@ -23,6 +23,9 @@ const getData = async () => {
 };
 
 export default async function ProblemesPage() {
+  if (!BASE_API_URL) {
+    return null;
+  }
   const problemes = await getData();
 
   return (

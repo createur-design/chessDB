@@ -3,12 +3,9 @@ import { BASE_API_URL } from "@/utils/constants";
 import { Parser } from "html-to-react";
 
 const getData = async (slug) => {
-  const res = await fetch(
-    `chess-master-crime.vercel.app/api/problemes/${slug}`,
-    {
-      next: { revalidate: 3600 },
-    }
-  );
+  const res = await fetch(`${BASE_API_URL}/api/problemes/${slug}`, {
+    next: { revalidate: 3600 },
+  });
 
   if (!res.ok) {
     throw new Error("Something went wrong");
@@ -18,6 +15,9 @@ const getData = async (slug) => {
 };
 
 export default async function SingleProblemePage({ params }) {
+  if (!BASE_API_URL) {
+    return null;
+  }
   const probleme = await getData(params.id);
   const htmlParser = new Parser();
   return (
