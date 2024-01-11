@@ -1,0 +1,41 @@
+.infos {
+  font-size: 0.9rem;
+}
+.infos p {
+  margin: 0;
+}
+.infos span {
+  font-weight: bold;
+}
+.date {
+  text-transform: uppercase;
+  color: #888888;
+  /* font-weight: bold; */
+  font-size: 0.7rem;
+}
+.date:after {
+  content: "";
+  display: inline-block;
+  width: 25px;
+  height: 1px;
+  background-color: #888888;
+  vertical-align: middle;
+  margin: 0 0.5rem;
+}
+.cat {
+  text-transform: uppercase;
+  /* font-weight: bold; */
+}
+.cat:after {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin: 0 0.5rem;
+  background-color: #888888;
+}
+.nbCoups {
+  color: var(--color-red);
+}
