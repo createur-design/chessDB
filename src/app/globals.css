@@ -79,6 +79,7 @@ a {
 .btn {
   display: inline-block;
   background-color: var(--color-gold);
+  border: 1px solid var(--color-gold);
   color: white;
   font-weight: bold;
   text-transform: uppercase;
@@ -92,6 +93,14 @@ a {
 }
 .btnBlack {
   background-color: black;
+}
+.btnRed {
+  background-color: var(--color-red);
+}
+.btnRed:hover {
+  background-color: transparent;
+  border: 1px solid var(--color-red);
+  color: var(--color-red);
 }
 .btnBlack:hover {
   background-color: transparent;
@@ -127,3 +136,10 @@ details[open] summary {
     color-scheme: dark;
   }
 } */
+
+form label {
+  font-weight: bold;
+}
+form label span {
+  color: var(--color-red);
+}

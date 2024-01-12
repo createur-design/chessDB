@@ -39,3 +39,15 @@
 .nbCoups {
   color: var(--color-red);
 }
+.admin {
+  box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.3);
+  padding: 5px;
+  display: flex;
+  border-radius: 8px;
+  justify-content: flex-end;
+}
+.btn {
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+}

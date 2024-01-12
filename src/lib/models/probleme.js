@@ -2,38 +2,10 @@ import mongoose from "mongoose";
 
 const ProblemeSchema = new mongoose.Schema(
   {
-    intro: {
-      type: String,
-      required: true,
-    },
-    stipulation: {
-      type: String,
-    },
-    coups: {
-      type: Number,
-      required: [true, "uniquement des chiffres !"],
-      maxlength: 2,
-    },
-    infosEtude: {
-      type: String,
-    },
-    categorie: {
-      type: String,
-      enum: ["problème", "étude", "hétérodoxe & féérique", "divers"],
-      required: true,
-      default: "problème",
-    },
-    fenPosition: {
-      type: String,
-      required: true,
-    },
-    solution: {
-      type: String,
-      required: true,
-    },
     autheur: {
       type: String,
       default: "Bernard Delobel",
+      required: true,
     },
     annee: {
       type: Number,
@@ -41,6 +13,32 @@ const ProblemeSchema = new mongoose.Schema(
     },
     ref: {
       type: String,
+    },
+    stipulation: {
+      type: String,
+      required: true,
+    },
+    infosSup: {
+      type: String,
+    },
+    fenPosition: {
+      type: String,
+      required: true,
+    },
+    coups: {
+      type: Number,
+      required: [true, "uniquement des chiffres !"],
+      maxlength: 2,
+    },
+    solution: {
+      type: String,
+      required: true,
+    },
+    categorie: {
+      type: String,
+      enum: ["problème orthodoxe", "mat aidé"],
+      required: true,
+      default: "problème orthodoxe",
     },
   },
   { timestamps: true }

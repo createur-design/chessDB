@@ -1,7 +1,9 @@
 "use client";
+import { deleteProbleme } from "@/lib/action";
 import Styles from "./item.module.css";
 import Link from "next/link";
 import { Chessboard } from "react-chessboard";
+import { CiTrash } from "react-icons/ci";
 
 const Item = ({ probleme }) => {
   return (
@@ -18,6 +20,14 @@ const Item = ({ probleme }) => {
           />
         </div>
         <div className="cell small-12 medium-7 large-8">
+          {/* <div className={Styles.admin}>
+            <form action={deleteProbleme}>
+              <input type="hidden" name="id" value={probleme._id} />
+              <button className={`btn btnRed ${Styles.btn}`} type="submit">
+                <CiTrash />
+              </button>
+            </form>
+          </div> */}
           <div className={Styles.infos}>
             <p>
               <span className={Styles.date}>
