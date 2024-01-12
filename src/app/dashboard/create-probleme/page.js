@@ -1,7 +1,11 @@
 "use client";
 import { createProbleme } from "@/lib/action";
+import dynamic from "next/dynamic";
 import React, { useState } from "react";
-import ReactQuill from "react-quill";
+
+const QuillComponent = dynamic(() => import("react-quill"), { ssr: false });
+
+// import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 export default function Page() {
   const [stipulation, setStipulation] = useState("");
@@ -41,7 +45,7 @@ export default function Page() {
             <label htmlFor="stipulation">
               Stipulation<span>*</span>
             </label>
-            <ReactQuill
+            <QuillComponent
               theme="snow"
               value={stipulation}
               onChange={setStipulation}
@@ -83,7 +87,7 @@ export default function Page() {
             <label htmlFor="solution">
               Solution<span>*</span>
             </label>
-            <ReactQuill
+            <QuillComponent
               theme="snow"
               value={solution}
               onChange={setSolution}
