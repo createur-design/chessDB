@@ -44,5 +44,5 @@ const ProblemeSchema = new mongoose.Schema(
   { timestamps: true }
 );
 const Probleme =
-  mongoose.models.Probleme || mongoose.model("Probleme", ProblemeSchema);
+  mongoose.models?.Probleme || mongoose.model("Probleme", ProblemeSchema);
 export default Probleme;

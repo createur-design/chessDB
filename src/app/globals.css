@@ -85,6 +85,7 @@ a {
   text-transform: uppercase;
   padding: 0.5rem 1rem;
   margin: 1rem 0;
+  border-radius: 8px;
 }
 .btn:hover {
   background-color: transparent;
@@ -93,9 +94,11 @@ a {
 }
 .btnBlack {
   background-color: black;
+  border: 1px solid var(black);
 }
 .btnRed {
   background-color: var(--color-red);
+  border: 1px solid var(--color-red);
 }
 .btnRed:hover {
   background-color: transparent;
@@ -130,6 +133,13 @@ details[open] summary {
   border-bottom: 1px solid var(--color-red);
   margin-bottom: 0.5em;
   /* color: var(--color-gold); */
+}
+
+.text-red {
+  color: var(--color-red);
+  font-weight: bold;
+  font-size: 0.9rem;
+  /* text-transform: uppercase; */
 }
 /* @media (prefers-color-scheme: dark) {
   html {

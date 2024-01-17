@@ -9,9 +9,12 @@ export default function Home() {
           <h1>Home</h1>
           <Image
             src="/assets/images/the_king.png"
-            alt=""
-            width={350}
-            height={250}
+            alt="Chess Master Crime by Bernard Delobel"
+            width="0"
+            height="0"
+            priority={true}
+            sizes="100vw"
+            style={{ width: "350px", height: "auto" }}
           />
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam

@@ -5,7 +5,6 @@ import React, { useState } from "react";
 
 const QuillComponent = dynamic(() => import("react-quill"), { ssr: false });
 
-// import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 export default function Page() {
   const [stipulation, setStipulation] = useState("");

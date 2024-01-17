@@ -33,13 +33,12 @@ export default async function SingleProblemePage({ params }) {
             <Chessboard pos={probleme}></Chessboard>
           </div>
           <div className="cell small-12 medium-7">
-            <h2>Mat en {probleme.coups} coups</h2>
+            <h2>{htmlParser.parse(probleme.stipulation)}</h2>
             <p>
               <small>
                 Compositeur : {probleme.autheur}, {probleme.annee}
               </small>
             </p>
-            <div>{htmlParser.parse(probleme.intro)}</div>
             <details>
               <summary>Solution</summary>
               {htmlParser.parse(probleme.solution)}

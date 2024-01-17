@@ -20,14 +20,14 @@ const Item = ({ probleme }) => {
           />
         </div>
         <div className="cell small-12 medium-7 large-8">
-          {/* <div className={Styles.admin}>
+          <div className={Styles.admin}>
             <form action={deleteProbleme}>
               <input type="hidden" name="id" value={probleme._id} />
               <button className={`btn btnRed ${Styles.btn}`} type="submit">
                 <CiTrash />
               </button>
             </form>
-          </div> */}
+          </div>
           <div className={Styles.infos}>
             <p>
               <span className={Styles.date}>
