@@ -1,4 +1,5 @@
 "use client";
+import ChessboardCompo from "@/components/chessVanilla/ChessVanilla";
 import { createProbleme } from "@/lib/action";
 import dynamic from "next/dynamic";
 import React, { useState } from "react";
@@ -9,6 +10,11 @@ import "react-quill/dist/quill.snow.css";
 export default function Page() {
   const [stipulation, setStipulation] = useState("");
   const [solution, setSolution] = useState("");
+  const [parentState, setParentState] = useState("");
+
+  const updateParentState = (dataFromChild) => {
+    setParentState(dataFromChild);
+  };
 
   return (
     <div className="grid-container">
@@ -23,7 +29,7 @@ export default function Page() {
                 <input
                   type="text"
                   name="autheur"
-                  value="Bernard Delobel"
+                  defaultValue="Bernard Delobel"
                   required
                 />
               </div>
@@ -46,16 +52,17 @@ export default function Page() {
             </label>
             <QuillComponent
               theme="snow"
-              value={stipulation}
+              defaultValue={stipulation}
               onChange={setStipulation}
               placeholder="Mat en x coups, les blancs jouent et gagnent..."
             />
             <input
               type="hidden"
               name="stipulation"
-              value={stipulation}
+              defaultValue={stipulation}
               placeholder="stipulation : Mat en x coups, les blancs jouent et gagnent..."
               required
+              readOnly
             />
             <label htmlFor="infos">
               Infos supplémentaires <small>(facultatif)</small>
@@ -70,7 +77,14 @@ export default function Page() {
             </label>
             <input
               type="text"
+              Value={parentState}
+              disabled
+              placeholder="position type FEN {8/8/8/8/8/8/8/8}"
+            />
+            <input
+              type="hidden"
               name="fenPosition"
+              Value={parentState}
               required
               placeholder="position type FEN {8/8/8/8/8/8/8/8}"
             />
@@ -88,7 +102,7 @@ export default function Page() {
             </label>
             <QuillComponent
               theme="snow"
-              value={solution}
+              defaultValue={solution}
               onChange={setSolution}
               placeholder="Solution..."
             />
@@ -97,14 +111,17 @@ export default function Page() {
               name="solution"
               placeholder="solution"
               required
-              value={solution}
+              defaultValue={solution}
+              readOnly
             />
             <button className="btn" type="submit">
               Créer
             </button>
           </form>
         </div>
-        <div className="cell small-4"></div>
+        <div className="cell small-4">
+          <ChessboardCompo onUpdateState={updateParentState} />
+        </div>
       </div>
     </div>
   );

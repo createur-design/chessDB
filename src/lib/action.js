@@ -36,6 +36,7 @@ export const createProbleme = async (formData) => {
     await newProbleme.save();
     console.log("save !");
     revalidatePath("/problemes");
+    revalidatePath("/dashboard/create-probleme");
   } catch (error) {
     console.log(error);
     throw new Error("Impossible de créer le nouveau problème !");
@@ -55,6 +56,8 @@ export const deleteProbleme = async (formData) => {
     throw new Error("Impossible de supprimer le problème !");
   }
 };
+
+export const editProbleme = async (formData) => {};
 
 export const register = async (previousState, formData) => {
   const { name, email, password, passwordRepeat } =
@@ -99,10 +102,9 @@ export const login = async (prevState, formData) => {
     await signIn("credentials", { email, password });
   } catch (err) {
     console.log(err);
-
-    if (err.message.includes("CredentialsSignin")) {
-      return { error: "Invalid email or password" };
-    }
+    // if (err.message.includes("CredentialsSignin")) {
+    //   return { error: "Invalid email or password" };
+    // }
     throw err;
     // return { error: "email ou mot de passe incorrect !" };
   }
